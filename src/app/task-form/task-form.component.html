@@ -3,17 +3,17 @@
     <div mat-dialog-content>
         <mat-form-field>
             <mat-label>Task Title</mat-label>
-            <input matInput [(ngModel)]="data.title" #title formControlName="title">
+            <input matInput [(ngModel)]="data.title" formControlName="title">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Description</mat-label>
-            <textarea #description formControlName="description" matInput [(ngModel)]="data.description"
+            <textarea formControlName="description" matInput [(ngModel)]="data.description"
                 placeholder="Ex. It makes me feel..."></textarea>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Select Priority</mat-label>
-            <mat-select #priority formControlName='priority' [(ngModel)]="data.priority">
-                <mat-option *ngFor="let food of foods; trackBy:trackByFn;" [value]="food.value">
+            <mat-select formControlName='priority' [(ngModel)]="data.priority">
+                <mat-option *ngFor="let food of foods" [value]="food.value">
                     {{food.viewValue}}
                 </mat-option>
             </mat-select>
@@ -21,8 +21,7 @@
         <mat-form-field appearance="fill">
             <mat-label>Choose an End Date</mat-label>
             <!-- #docregion toggle -->
-            <input matInput #date formControlName="date" [(ngModel)]="data.date" [min]="todayDate"
-                [matDatepicker]="picker">
+            <input matInput formControlName="date" [(ngModel)]="data.date" [min]="todayDate" [matDatepicker]="picker">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
             <!-- #enddocregion toggle -->
