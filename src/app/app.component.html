@@ -45,6 +45,7 @@
     justify-content: space-between;
   }
 
+
   .toolbar img {
     margin: 0 16px;
   }
@@ -63,7 +64,7 @@
     margin: 10;
     justify-content: center;
     padding: 0 16px;
-    height: 92vh;
+    height: 95%;
   }
 
   svg.material-icons {
@@ -83,11 +84,21 @@
   }
 
   .main-container {
-    display: flex;
     align-items: inherit;
     padding-top: 30px;
+    display: flex;
   }
 
+  /* .footer {
+    height: 60px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    justify-content: space-between;
+  } */
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
@@ -129,3 +140,6 @@
 <div class="content" role="main">
   <app-task-container class='main-container'></app-task-container>
 </div>
+<!-- <div class='footer'>
+  <app-footer></app-footer>
+</div> -->

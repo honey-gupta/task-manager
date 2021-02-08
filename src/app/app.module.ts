@@ -13,13 +13,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MatButtonModule, MatSelectModule } from '@angular/material';
 import { StorageService } from './storage.service';
+import { TruncatePipe } from './truncate.pipe';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskContainerComponent,
     HeaderComponent,
-    TaskFormComponent
+    TaskFormComponent,
+    TruncatePipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

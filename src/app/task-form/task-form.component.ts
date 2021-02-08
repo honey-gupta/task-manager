@@ -21,6 +21,7 @@ export class TaskFormComponent implements OnInit {
   priority: string;
   date: string;
   newTaskForm: FormGroup;
+  todayDate: Date
   foods = [
     { value: 'low', viewValue: 'Low' },
     { value: 'Medium', viewValue: 'Medium' },
@@ -33,6 +34,7 @@ export class TaskFormComponent implements OnInit {
 
   ngOnInit(): any {
     this.buildForm()
+    this.todayDate = new Date();
   }
 
   buildForm(): void {
@@ -40,11 +42,18 @@ export class TaskFormComponent implements OnInit {
       'title': [this.title, [Validators.required]],
       'description': [this.description, [Validators.required]],
       'date': [this.date, [Validators.required]],
-      'priority': [this.priority],
+      'priority': [this.priority, [Validators.required]],
     })
+    // console.log(this.newTaskForm)
   }
-  onNoClick(): void {
+  save(): void {
     const itemData = this.newTaskForm.value;
     this.dialogRef.close(itemData);
+  }
+  close(): void {
+    this.dialogRef.close();
+  }
+  compareObjects(o1: any, o2: any): boolean {
+    return o1.name === o2.name && o1._id === o2._id;
   }
 }
