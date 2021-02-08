@@ -6,9 +6,6 @@ import {
   , FormGroup, Validators
 } from '@angular/forms';
 
-export interface DialogData {
-
-}
 
 @Component({
   selector: 'app-task-form',
@@ -29,8 +26,7 @@ export class TaskFormComponent implements OnInit {
   ];
   constructor(
     public dialogRef: MatDialogRef<TaskFormComponent>,
-    private formBuilder: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+    private formBuilder: FormBuilder) { }
 
   ngOnInit(): any {
     this.buildForm()
