@@ -23,6 +23,7 @@ export class TaskContainerComponent implements OnInit {
   constructor(private _storageService: StorageService, public dialog: MatDialog) { }
 
   ngOnInit() {
+
     this._storageService.currentMessage.subscribe(message => {
       if (message == 'newtask' || message == 'editedtask' || message == 'deletedtask' || message == 'movedtask') {
         // console.log(message)
@@ -30,7 +31,11 @@ export class TaskContainerComponent implements OnInit {
         this.process = this._storageService.getProcessTasks() ? this._storageService.getProcessTasks() : []
         this.completed = this._storageService.getCompletedTasks() ? this._storageService.getCompletedTasks() : []
         this.totalTasks = this.pending.length + this.process.length + this.completed.length;
-        this.completedPercentage = ((this.completed.length / this.totalTasks) * 100).toFixed(2)
+        if (this.completed.length) {
+          this.completedPercentage = ((this.completed.length / this.totalTasks) * 100).toFixed(2)
+        } else {
+          this.completedPercentage = 0.00;
+        }
         if (this.pending.length) {
           this.showCards = true
         } else {
@@ -57,7 +62,12 @@ export class TaskContainerComponent implements OnInit {
         this.process = this._storageService.getProcessTasks() ? this._storageService.getProcessTasks() : []
         this.completed = this._storageService.getCompletedTasks() ? this._storageService.getCompletedTasks() : []
         this.totalTasks = this.pending.length + this.process.length + this.completed.length;
-        this.completedPercentage = ((this.completed.length / this.totalTasks) * 100).toFixed(2)
+        if (this.completed.length) {
+          this.completedPercentage = ((this.completed.length / this.totalTasks) * 100).toFixed(2)
+        } else {
+          this.completedPercentage = 0.00;
+        }
+        console.log(this.completedPercentage)
         if (this.pending.length) {
           this.showCards = true
         } else {
