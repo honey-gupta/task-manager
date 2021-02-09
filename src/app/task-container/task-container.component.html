@@ -83,7 +83,7 @@
 
         <div class="completed-container">
             <div class='percent-container'>
-                <h2 class='box-title'>Completed</h2>
+                <h2 class='box-title-completed'>Completed</h2>
                 <span [ngClass]="{'red-percentage': completedPercentage < 33,'amber-percentage': (completedPercentage > 33 && completedPercentage < 66),
                     'green-percentage':completedPercentage > 66}">{{completedPercentage
                     ? completedPercentage : 0.00}}%</span>

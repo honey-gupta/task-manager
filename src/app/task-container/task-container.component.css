@@ -22,6 +22,10 @@ display: flex;
 .box-title{
     text-align: center;
 }
+.box-title-completed{
+  text-align: center;
+  padding-right: 15px;
+}
 .percent-container{
   display: flex;
   display: flex;
