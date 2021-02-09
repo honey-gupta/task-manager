@@ -7,7 +7,10 @@ import {
 } from '@angular/forms';
 
 export interface DialogData {
-
+  title,
+  description,
+  priority,
+  date,
 }
 
 @Component({
