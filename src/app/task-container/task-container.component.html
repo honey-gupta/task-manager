@@ -41,6 +41,7 @@
 
         </div>
     </div>
+    <mat-divider></mat-divider>
     <div class="process-box">
         <div class="process-container">
             <h2 class='box-title'>In Process</h2>
@@ -76,9 +77,17 @@
             </div>
         </div>
     </div>
+    <mat-divider></mat-divider>
+
     <div class="completed-box">
+
         <div class="completed-container">
-            <h2 class='box-title'>Completed</h2>
+            <div class='percent-container'>
+                <h2 class='box-title'>Completed</h2>
+                <span [ngClass]="{'red-percentage': completedPercentage < 33,'amber-percentage': (completedPercentage > 33 && completedPercentage < 66),
+                    'green-percentage':completedPercentage > 66}">{{completedPercentage
+                    ? completedPercentage : 0.00}}%</span>
+            </div>
             <div cdkDropList #completedList="cdkDropList" [cdkDropListData]="completed" class="example-list"
                 (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[processList]">
                 <div *ngIf='showCompletedCards'>
@@ -99,6 +108,3 @@
         </div>
     </div>
 </div>
-<span [ngClass]="{'red-percentage': completedPercentage < 33,'amber-percentage': (completedPercentage > 33 && completedPercentage < 66),
-    'green-percentage':completedPercentage > 66}">{{completedPercentage
-    ? completedPercentage : 0.00}}%</span>

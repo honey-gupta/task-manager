@@ -4,29 +4,35 @@
 }
 .pending-box{
     display: flex;
-    margin: 10px;
+    /* margin: 10px; */
     border-right: 1px solid #1c76d2;
 }
 
 .process-box{
 display: flex;
-margin: 10px;
+/* margin: 10px; */
     border-right: 1px solid #1c76d2;
 }
 
 .completed-box{
     display:flex;
-    margin: 10px;
+    /* margin: 10px; */
     /* border-right: 1px solid #1c76d2; */
 }
 .box-title{
     text-align: center;
 }
+.percent-container{
+  display: flex;
+  display: flex;
+  justify-content: center;
+
+}
 
 .pending-container, .process-container, .completed-container {
     width: 400px;
     max-width: 100%;
-    margin: 0 25px 25px 0;
+    margin: 0 25px  0 25px;
     vertical-align: top;
   }
   
@@ -183,10 +189,37 @@ margin: 10px;
 
   .red-percentage{
     color: rgb(223, 79, 79);
+    height: 63px;
+    width: 38px;
+    /* border: 2px solid black; */
+    padding: -17px;
+    display: flex;
+    justify-content: center;
+    /* margin-bottom: 11px; */
+    align-items: center;
+
+
   }
   .amber-percentage{
     color:  #ffbf00 ;
+    height: 63px;
+    width: 38px;
+    /* border: 2px solid black; */
+    padding: -17px;
+    display: flex;
+    justify-content: center;
+    /* margin-bottom: 11px; */
+    align-items: center;
   }
   .green-percentage{
     color: rgb(39, 224, 79);
+    height: 63px;
+    width: 38px;
+    /* border: 2px solid black; */
+    padding: -17px;
+    display: flex;
+    justify-content: center;
+    /* margin-bottom: 11px; */
+    align-items: center;
+  
   }
