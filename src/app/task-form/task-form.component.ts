@@ -6,6 +6,9 @@ import {
   , FormGroup, Validators
 } from '@angular/forms';
 
+export interface DialogData {
+
+}
 
 @Component({
   selector: 'app-task-form',
@@ -26,7 +29,8 @@ export class TaskFormComponent implements OnInit {
   ];
   constructor(
     public dialogRef: MatDialogRef<TaskFormComponent>,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
   ngOnInit(): any {
     this.buildForm()
@@ -40,7 +44,7 @@ export class TaskFormComponent implements OnInit {
       'date': [this.date, [Validators.required]],
       'priority': [this.priority, [Validators.required]],
     })
-    // console.log(this.newTaskForm)
+    // console.log(this.newTaskForm)/*  */
   }
   save(): void {
     const itemData = this.newTaskForm.value;

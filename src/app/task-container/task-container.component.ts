@@ -98,7 +98,7 @@ export class TaskContainerComponent implements OnInit {
 
   editPendingTask(id): void {
 
-    // console.log(id, 'IDDD')
+    console.log(id, 'IDDD')
 
     this.pending.filter((task) => {
       if (task.id === id) {
