@@ -26,38 +26,6 @@ export class TaskContainerComponent implements OnInit {
 
     this._storageService.currentMessage.subscribe(message => {
       if (message == 'newtask' || message == 'editedtask' || message == 'deletedtask' || message == 'movedtask') {
-        // console.log(message)
-        this.pending = this._storageService.getPendingTasks() ? this._storageService.getPendingTasks() : []
-        this.process = this._storageService.getProcessTasks() ? this._storageService.getProcessTasks() : []
-        this.completed = this._storageService.getCompletedTasks() ? this._storageService.getCompletedTasks() : []
-        this.totalTasks = this.pending.length + this.process.length + this.completed.length;
-        if (this.completed.length) {
-          this.completedPercentage = ((this.completed.length / this.totalTasks) * 100).toFixed(2)
-        } else {
-          this.completedPercentage = 0.00;
-        }
-        if (this.pending.length) {
-          this.showCards = true
-        } else {
-          this.showCards = false;
-
-        }
-        // console.log(this.process, 'vammoo')
-        if (this.process && this.process.length) {
-          this.showProcessCards = true
-        } else {
-          this.showProcessCards = false;
-
-        }
-        if (this.completed && this.completed.length) {
-          this.showCompletedCards = true
-        } else {
-          this.showCompletedCards = false;
-
-        }
-        // console.log(this.pending.typeof(), 'pendinpendingpending')
-      } else {
-        // console.log('mMEHHHH', this.pending)
         this.pending = this._storageService.getPendingTasks() ? this._storageService.getPendingTasks() : []
         this.process = this._storageService.getProcessTasks() ? this._storageService.getProcessTasks() : []
         this.completed = this._storageService.getCompletedTasks() ? this._storageService.getCompletedTasks() : []
@@ -79,27 +47,18 @@ export class TaskContainerComponent implements OnInit {
           this.showProcessCards = true
         } else {
           this.showProcessCards = false;
-
         }
         if (this.completed && this.completed.length) {
           this.showCompletedCards = true
         } else {
           this.showCompletedCards = false;
-
         }
       }
     })
-    this.pending = this._storageService.getPendingTasks()
-
-    // console.log('INITITITITIT', typeof (this._storageService.getPendingTasks()))
-
-
+    this.pending = this._storageService.getPendingTasks();
   }
 
   editPendingTask(id): void {
-
-    console.log(id, 'IDDD')
-
     this.pending.filter((task) => {
       if (task.id === id) {
         const dialogRef = this.dialog.open(TaskFormComponent, {

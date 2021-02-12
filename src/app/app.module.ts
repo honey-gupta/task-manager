@@ -14,7 +14,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MatButtonModule, MatSelectModule } from '@angular/material';
 import { StorageService } from './storage.service';
 import { TruncatePipe } from './truncate.pipe';
-import { FooterComponent } from './footer/footer.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/moment';
 import * as moment from 'moment';
@@ -32,7 +31,6 @@ export function momentAdapterFactory() {
     HeaderComponent,
     TaskFormComponent,
     TruncatePipe,
-    FooterComponent
   ],
   imports: [
     BrowserModule,
